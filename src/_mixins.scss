@@ -1,0 +1,127 @@
+// @import "./variables";
+:root {
+  --body-bg-clr: #{$light-background};
+  --todo-bg-clr: #{$light-background};
+  --text-clr: #{$light-text-color};
+  --text-clr-faded: #{$light-text-color-faded};
+  --btn-accent: #{$light-grayish};
+  --shadow-color: #{$light-shadow-color};
+  --filter-btn-clr: #{$light-filter-btn-clr};
+  --filter-btn-hover: #{$light-filter-btn-hover};
+
+  --body-bg: var(--body-bg-clr);
+  --todo-bg: var(--todo-bg-clr);
+}
+
+@mixin input-div-btn {
+  border: 0.125rem solid var(--btn-accent);
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 50%;
+  outline: none;
+  background-color: var(--todo-bg);
+  position: relative;
+  background-clip: padding-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  // the z-index: -1; is making the gradient border go behind the todoDiv i.e., button container.
+  &:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    margin: -0.125rem;
+    border-radius: inherit;
+    background-image: linear-gradient(
+      to bottom right,
+      hsl(192, 100%, 67%),
+      hsl(280, 87%, 65%)
+    );
+    z-index: -1;
+  }
+  &:hover {
+    border: 0.125rem solid transparent;
+  }
+}
+
+@mixin btn-light {
+  border: 0.125rem solid var(--btn-accent);
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 50%;
+  outline: none;
+  background-color: var(--todo-bg);
+  position: relative;
+  background-clip: padding-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  // the z-index: -1; is making the gradient border go behind the todoDiv i.e., button container.
+  &:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    margin: -0.125rem;
+    border-radius: inherit;
+    background-image: linear-gradient(
+      to bottom right,
+      hsl(192, 100%, 67%),
+      hsl(280, 87%, 65%)
+    );
+    z-index: -1;
+  }
+  &:hover {
+    border: 0.125rem solid transparent;
+  }
+}
+
+@mixin moon-btn {
+  border: none;
+  width: 2rem;
+  height: 2rem;
+  outline: none;
+  background: none;
+}
+
+@mixin delete-btn {
+  border: none;
+  outline: none;
+  background: none;
+  opacity: 0;
+}
+
+@mixin flex-horizontal($horizontal-gaping) {
+  display: flex;
+  flex-direction: row;
+  justify-content: $horizontal-gaping;
+  align-items: center;
+}
+
+@mixin flex-vertical {
+  display: flex;
+  flex-direction: column;
+}
+
+@mixin filter-btn {
+  border: none;
+  outline: none;
+  background: none;
+  font-family: $primary-font;
+  color: var(--filter-btn-clr);
+  font-weight: map-get($font-weights, regular);
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: 0.4s;
+
+  &:hover {
+    color: var(--filter-btn-hover);
+  }
+}

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+    <link rel="stylesheet" href="src/main.css" />
+    <title>Frontend Mentor | Todo app</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <img
+      src="images/bg-desktop-light.jpg"
+      alt="astheticaly pleasing image"
+      id="body-bg-image"
+      class="body-bg-image"
+    />
+
+    <div class="heading-div">
+      <h2 class="heading">TODO</h2>
+      <button class="theme-toggle-btn">
+        <img
+          src="images/icon-moon.svg"
+          class="theme-img"
+          alt="Theme Toggle Btn"
+        />
+      </button>
+    </div>
+
+    <div class="input-div">
+      <form action="">
+        <button type="submit" class="input-div-btn"></button>
+        <input type="text" placeholder="Create a new todo..." class="input" />
+      </form>
+    </div>
+
+    <div class="list-div">
+      <ul class="todo-list">
+        <div class="todo count draggable" draggable="true">
+          <button class="completed-todo-btn">
+            <img src="images/icon-check.svg" class="check-img" alt="cross" />
+          </button>
+          <li class="todo-text">abdus</li>
+          <button class="delete-todo-btn">
+            <img src="images/icon-cross.svg" class="cross-img" alt="cross" />
+          </button>
+        </div>
+        <div class="todo count draggable" draggable="true">
+          <button class="completed-todo-btn">
+            <img src="images/icon-check.svg" class="check-img" alt="cross" />
+          </button>
+          <li class="todo-text">samad</li>
+          <button class="delete-todo-btn">
+            <img src="images/icon-cross.svg" class="cross-img" alt="cross" />
+          </button>
+        </div>
+      </ul>
+
+      <div class="filter-div">
+        <li class="todo-count">0 items left</li>
+        <button class="filter-all-btn">All</button>
+        <button class="filter-active-btn">Active</button>
+        <button class="filter-completed-btn">Completed</button>
+        <button class="filter-clear-btn">Clear Completed</button>
+      </div>
+    </div>
+    <script src="./src/index.js"></script>
+  </body>
+</html>

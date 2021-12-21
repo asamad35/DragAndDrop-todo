@@ -1,0 +1,454 @@
+:root {
+  --body-bg-clr: #fafafa;
+  --todo-bg-clr: #fafafa;
+  --text-clr: #484b6a;
+  --text-clr-faded: #9394a5;
+  --btn-accent: #d2d3db;
+  --shadow-color: #d2d3db;
+  --filter-btn-clr: #9394a5;
+  --filter-btn-hover: #484b6a;
+  --body-bg: var(--body-bg-clr);
+  --todo-bg: var(--todo-bg-clr);
+}
+
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --body-bg-clr: #fafafa;
+  --todo-bg-clr: #fafafa;
+  --text-clr: #484b6a;
+  --text-clr-faded: #9394a5;
+  --btn-accent: #d2d3db;
+  --shadow-color: #d2d3db;
+  --filter-btn-clr: #9394a5;
+  --filter-btn-hover: #484b6a;
+  --body-bg: var(--body-bg-clr);
+  --todo-bg: var(--todo-bg-clr);
+}
+
+.dark {
+  --body-bg-clr: #161722;
+  --todo-bg-clr: #25273c;
+  --text-clr: #cacde8;
+  --text-clr-faded: #4d5066;
+  --btn-accent: #4d5066;
+  --shadow-color: black;
+  --filter-btn-clr: #4d5066;
+  --filter-btn-hover: #e4e5f1;
+  --body-bg: var(--body-bg-clr);
+  --todo-bg: var(--todo-bg-clr);
+}
+
+body {
+  background-color: var(--body-bg);
+  height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.body-bg-image {
+  top: 0;
+  left: 0;
+  position: absolute;
+  z-index: -1;
+  width: 100%;
+}
+
+.heading-div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  min-width: 34rem;
+  position: absolute;
+  top: 5rem;
+}
+
+.heading-div .heading {
+  color: #fafafa;
+  font-family: "Josefin Sans", sans-serif;
+  font-size: 2.5rem;
+  letter-spacing: 1rem;
+}
+
+.heading-div .theme-toggle-btn {
+  border: none;
+  width: 2rem;
+  height: 2rem;
+  outline: none;
+  background: none;
+}
+
+.input-div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: var(--todo-bg);
+  min-width: 34rem;
+  position: absolute;
+  top: 10.125rem;
+  padding: 0.9rem 0.9rem 0.9rem 2rem;
+  border-radius: 0.313rem;
+  z-index: 1;
+}
+
+.input-div .input-div-btn {
+  border: 0.125rem solid var(--btn-accent);
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 50%;
+  outline: none;
+  background-color: var(--todo-bg);
+  position: relative;
+  background-clip: padding-box;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  cursor: pointer;
+}
+
+.input-div .input-div-btn:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  margin: -0.125rem;
+  border-radius: inherit;
+  background-image: -webkit-gradient(linear, left top, right bottom, from(#57ddff), to(#c058f3));
+  background-image: linear-gradient(to bottom right, #57ddff, #c058f3);
+  z-index: -1;
+}
+
+.input-div .input-div-btn:hover {
+  border: 0.125rem solid transparent;
+}
+
+.input-div form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.input-div form .input {
+  background-color: var(--todo-bg);
+  border: none;
+  outline: none;
+  height: 2rem;
+  width: 28rem;
+  margin-left: 1.5rem;
+  font-family: "Josefin Sans", sans-serif;
+  font-size: 1.25rem;
+  color: var(--text-clr);
+  caret-color: #3a7bfd;
+}
+
+::-webkit-input-placeholder {
+  color: #9394a5;
+}
+
+:-ms-input-placeholder {
+  color: #9394a5;
+}
+
+::-ms-input-placeholder {
+  color: #9394a5;
+}
+
+::placeholder {
+  color: #9394a5;
+}
+
+.list-div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  background-color: var(--todo-bg);
+  min-width: 34rem;
+  position: absolute;
+  top: 15.5rem;
+  border-radius: 0.313rem;
+  -webkit-box-shadow: 0rem 3rem 6.5rem var(--shadow-color);
+          box-shadow: 0rem 3rem 6.5rem var(--shadow-color);
+}
+
+.list-div .filter-div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: relative;
+  height: 2.8rem;
+}
+
+.list-div .filter-div .todo-count {
+  font-size: 0.833rem;
+  font-family: "Josefin Sans", sans-serif;
+  color: var(--filter-btn-clr);
+  list-style-type: none;
+  position: absolute;
+  left: 2rem;
+}
+
+.list-div .filter-div .filter-all-btn {
+  border: none;
+  outline: none;
+  background: none;
+  font-family: "Josefin Sans", sans-serif;
+  color: var(--filter-btn-clr);
+  font-weight: 400;
+  cursor: pointer;
+  font-size: 0.9rem;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+  position: absolute;
+  right: 21.5rem;
+}
+
+.list-div .filter-div .filter-all-btn:hover {
+  color: var(--filter-btn-hover);
+}
+
+.list-div .filter-div .filter-active-btn {
+  border: none;
+  outline: none;
+  background: none;
+  font-family: "Josefin Sans", sans-serif;
+  color: var(--filter-btn-clr);
+  font-weight: 400;
+  cursor: pointer;
+  font-size: 0.9rem;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+  position: absolute;
+  right: 18rem;
+}
+
+.list-div .filter-div .filter-active-btn:hover {
+  color: var(--filter-btn-hover);
+}
+
+.list-div .filter-div .filter-completed-btn {
+  border: none;
+  outline: none;
+  background: none;
+  font-family: "Josefin Sans", sans-serif;
+  color: var(--filter-btn-clr);
+  font-weight: 400;
+  cursor: pointer;
+  font-size: 0.9rem;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+  position: absolute;
+  right: 12.5rem;
+}
+
+.list-div .filter-div .filter-completed-btn:hover {
+  color: var(--filter-btn-hover);
+}
+
+.list-div .filter-div .filter-clear-btn {
+  border: none;
+  outline: none;
+  background: none;
+  font-family: "Josefin Sans", sans-serif;
+  color: var(--filter-btn-clr);
+  font-weight: 400;
+  cursor: pointer;
+  font-size: 0.9rem;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+  font-family: "Josefin Sans", sans-serif;
+  position: absolute;
+  right: 2rem;
+}
+
+.list-div .filter-div .filter-clear-btn:hover {
+  color: var(--filter-btn-hover);
+}
+
+.todo-list {
+  min-width: 34rem;
+  border-radius: 0.313rem;
+}
+
+.todo-list .todo {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: relative;
+  height: 3.8rem;
+  border-bottom: 0.5px solid var(--btn-accent);
+  z-index: 1;
+  cursor: move;
+}
+
+.todo-list .todo .completed-todo-btn {
+  border: 0.125rem solid var(--btn-accent);
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 50%;
+  outline: none;
+  background-color: var(--todo-bg);
+  position: relative;
+  background-clip: padding-box;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  left: 2rem;
+  cursor: pointer;
+}
+
+.todo-list .todo .completed-todo-btn:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  margin: -0.125rem;
+  border-radius: inherit;
+  background-image: -webkit-gradient(linear, left top, right bottom, from(#57ddff), to(#c058f3));
+  background-image: linear-gradient(to bottom right, #57ddff, #c058f3);
+  z-index: -1;
+}
+
+.todo-list .todo .completed-todo-btn:hover {
+  border: 0.125rem solid transparent;
+}
+
+.todo-list .todo .completed-todo-btn .check-img {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.todo-list .todo .todo-text {
+  margin-left: 3.5rem;
+  list-style: none;
+  font-family: "Josefin Sans", sans-serif;
+  font-size: 1.3rem;
+  color: var(--text-clr);
+  cursor: pointer;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  pointer-events: none;
+}
+
+.todo-list .todo .delete-todo-btn {
+  border: none;
+  outline: none;
+  background: none;
+  opacity: 0;
+  position: absolute;
+  right: 2rem;
+  cursor: pointer;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.todo-list .todo .delete-todo-btn .cross-img {
+  pointer-events: none;
+}
+
+.todo-list .todo:hover .delete-todo-btn {
+  opacity: 1;
+}
+
+.completed {
+  opacity: 0.3;
+  text-decoration: line-through;
+}
+
+.dragging {
+  opacity: 0.5;
+}
+
+.btn-gradient {
+  background-image: -webkit-gradient(linear, left top, right bottom, from(#57ddff), to(#c058f3));
+  background-image: linear-gradient(to bottom right, #57ddff, #c058f3);
+  border: 0.125rem solid transparent !important;
+}
+/*# sourceMappingURL=main.css.map */
